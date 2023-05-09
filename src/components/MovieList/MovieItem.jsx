@@ -1,11 +1,11 @@
 import {useHistory} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Card from '@mui/material/Card';
+import { useDispatch } from 'react-redux';
 import './MovieList.css'
 
 function MovieItem({ movie }) {
   const history = useHistory();
   const dispatch = useDispatch();
+  
 
   const detailsPush = () => {
     dispatch({ type: 'SET_MOVIE_ID', payload: movie.id})
