@@ -17,7 +17,7 @@ function* rootSaga() {
 }
 
 function* fetchAllMovies() {
-    // get all movies from the DB
+    // get all movies from the DataBase
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
@@ -41,7 +41,7 @@ const movieItem = (state = [], action) => {
     }
 }
 
-//* stores movie id - gd
+//* stores movie id 
 const movieId = (state = '', action) => {
     switch (action.type) {
         case 'SET_MOVIE_ID':

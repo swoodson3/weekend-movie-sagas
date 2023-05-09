@@ -7,12 +7,13 @@ function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
-      <Router>        
+      <Router>    
+          {/* Route for the MovieList */}
         <Route path="/" exact>
           <MovieList />
         </Route>
         
-        {/* Details page */}
+        {/* Route for the Details page */}
         <Route path="/details" exact>
           <Details />
         </Route>

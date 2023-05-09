@@ -10,6 +10,7 @@ function Details() {
   const movieItem = useSelector(store => store.movieItem);
   const movieId = useSelector(store => store.movieId);
 
+  // Function to movie details for the given ID
   const fetchMovieItem = () => {
     axios.get(`/api/movie/${movieId}`).then((response) => {
       console.log(`Response data: ${response.data}`);
@@ -22,12 +23,14 @@ function Details() {
       console.log(`Error in fetchMovieItem: ${error}`);
       alert(`Something went quite wrong.`)
     })
-  } // end fetchMovieItem
+  } 
 
+  // Navigate to the home page
   const homeButton = () => {
     history.push('/');
   }
 
+  // Fetch the movie details when the component mounts
   useEffect(() => {
     fetchMovieItem()
   }, [])
@@ -37,6 +40,7 @@ function Details() {
       <h1>Details Page</h1>
       <hr />
       {
+        // Map over the movie details and display them 
         movieItem.map(movie => (
           <div key={movie.id}>
             <h3>{movie.movie_title}</h3>
