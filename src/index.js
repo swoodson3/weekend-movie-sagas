@@ -32,6 +32,25 @@ function* fetchAllMovies() {
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
+const movieItem = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_MOVIE_ITEM':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+//* stores movie id - gd
+const movieId = (state = '', action) => {
+    switch (action.type) {
+        case 'SET_MOVIE_ID':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
@@ -57,6 +76,8 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        movieItem,
+        movieId
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
