@@ -15,11 +15,12 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <section className="movies">
-                {movies.map(movie => {
+                {movies.map(movie => { // Iterate through each movie in the movies array
                     return (
                         <div key={movie.id} >
-                            <h3>{movie.title}</h3>
+                            <h3>{movie.title}</h3> {/* //Display the movie title */}
                             <img src={movie.poster} alt={movie.title}/>
+                            {/* Display the movie poster image */}
                         </div>
                     );
                 })}

@@ -15,10 +15,8 @@ function MovieItem({ movie }) {
 
   return (
     <div>
-      <Card sx={{ maxwidth: 200, margin: 3}}>
       <h2>{movie.title}</h2>
       <img onClick={detailsPush} src={movie.poster} alt={movie.title} />
-      </Card>
     </div>
   )
 }
